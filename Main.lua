@@ -1,3 +1,7 @@
+--[[ Updates:
+08/1/2022
+Removed simulationradius function and described humanoid state 15.
+]]
 
 --[[
 # How does reanimation work?
@@ -192,7 +196,6 @@ Also only RunService.Heartbeat works.
 
 ]]
 game:GetService("RunService").Heartbeat:Connect(function()
-	setsimulationradius(1000)
     for i,v in pairs(Character:GetChildren()) do
         if v:IsA("BasePart") then v.Velocity = _G.Velocity elseif v:IsA("Accessory") then v.Handle.Velocity = _G.Velocity end
     end
@@ -234,7 +237,7 @@ end)
 
 game.Players.LocalPlayer.Character = Reanim
 game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-Character.Humanoid:ChangeState(15)
+Character.Humanoid:ChangeState(15) -- State 15 makes your humanoid die, read more about states at: https://developer.roblox.com/en-us/api-reference/function/Humanoid/ChangeState
 game.Players.LocalPlayer.Character = workspace[game.Players.LocalPlayer.Name]
 Reanim:Destroy()
 end)
