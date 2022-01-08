@@ -60,7 +60,7 @@ I do recommend to enable RigidityEnabled[1] on both AlignPosition and AlignOrien
 but if you dont want to well.
 
 
-Definition of RigidityEnabled:
+Definition of RigidityEnabled: Maximazes all values in align, so you dont require to have millions of properties
 
 Position:
 When set to true, the solver will react as quickly as possible to move the attachments together.
